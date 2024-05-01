@@ -68,121 +68,86 @@ body {
 
 /* nav bar */
 /* desktop mode */
-.navbar input[type="checkbox"],
-.navbar .hamburger-lines {
-  display: none;
+nav {
+  background: #000000;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
-.navbar {
-    padding-top: 7px;
-  padding-left: 50px;
-  padding-right: 50px;
+.navbar{
+  padding-top: 7px;
+  padding-left: 20px;
+  padding-right: 20px;
   box-shadow: 0px 5px 10px 0px #aaa;
   position: fixed;
   width: 100%;
   background: #000;
-  color: #000;
+  color: #fff;
   opacity: 0.85;
   height: 70px;
   z-index: 12;
 }
 
-
-.navbar-container {
+nav .mainMenu {
   display: flex;
-  justify-content: space-between;
-  height: 64px;
-  align-items: center;
-}
-
-
-.menu-items {
-  display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
-  order: 2;
-  display: flex;
-  animation: about-img-animation 1s ease-in-out forwards;
-}
-
-
-.menu-items li {
   list-style: none;
-  margin-left: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
 }
-
-
-.menu-items a {
+nav .mainMenu li a {
+  display: inline-block;
+  padding: 15px;
   text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  transition: 0.2s ease;
 }
-
-
-.menu-items a:hover {
-  color: #f7ef8a;
-  transition: color 0.3s ease-in-out;
+nav .mainMenu li a:hover {
+  background: #796611;
+  transition: background 0.3s ease-in-out;
 }
-/* Media Queries */
-@media screen and (max-width: 992px) {
-  .navbar {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
+nav .openMenu {
+  font-size: 2rem;
+  margin: 20px;
+  display: none;
+  cursor: pointer;
 }
-
-@media screen and (max-width: 768px) {
-  .navbar {
-    height: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  .navbar-container {
+nav .mainMenu .closeMenu,
+.icons i {
+  font-size: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  nav .mainMenu {
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 10;
     flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu-items {
-    order: 1;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0, 0, 0);
+    transition: top 1s ease 0s;
     display: none;
   }
-
-  /* Style for hamburger lines */
-  .navbar input[type="checkbox"] {
-    
+  nav .mainMenu .closeMenu {
     display: block;
     position: absolute;
     top: 20px;
-    right: 30px;
-    cursor: pointer;
-    z-index: 15;
+    right: 20px;
   }
-
-  /* Show menu items when checkbox is checked */
-  .navbar input[type="checkbox"]:checked ~ .menu-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #000;
-    z-index: 10;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  nav .openMenu {
+    display: block;
   }
-
-  /* Style for individual menu items */
-  .menu-items li {
-    margin: 10px 0;
-    font-size: 1.5rem;
+  nav .mainMenu li a:hover {
+    background: none;
+    color: rgb(255, 123, 0);
+  }
+  .icons i {
+    display: inline-block;
+    padding: 12px;
   }
 }
 
@@ -321,7 +286,10 @@ body {
 @media screen and (max-width: 768px) {
   #about .small {
     padding-top: 50px; /* Reduce padding for smaller screens */
-    font-size: 3rem;
+    font-size: 4rem;
+  }
+  #about h2{
+    font-size: 1.rem;
   }
 }
 
@@ -830,7 +798,7 @@ section {
     color: #fff;
   }
   
-  @media (min-width: 991px) {
+  @media (max-width: 991px) {
     section {
       padding-top: 50px;
       padding-bottom: 50px;
