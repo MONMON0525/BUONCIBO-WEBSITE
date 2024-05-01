@@ -128,6 +128,65 @@ body {
   color: #f7ef8a;
   transition: color 0.3s ease-in-out;
 }
+/* Media Queries */
+@media screen and (max-width: 992px) {
+  .navbar {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-items {
+    order: 1;
+    display: none;
+  }
+
+  /* Style for hamburger lines */
+  .navbar input[type="checkbox"] {
+    
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 15;
+  }
+
+  /* Show menu items when checkbox is checked */
+  .navbar input[type="checkbox"]:checked ~ .menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #000;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* Style for individual menu items */
+  .menu-items li {
+    margin: 10px 0;
+    font-size: 1.5rem;
+  }
+}
+
+
 
 /* showcase */
 .showcase-area { 
@@ -162,6 +221,27 @@ body {
     font-size: 50px;
     text-align: center;
   }
+
+  @media screen and (max-width: 768px) {
+    .showcase-container {
+      font-size: 4rem;
+    }
+    
+    .showcase-container p {
+      font-size: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .showcase-container {
+      font-size: 3rem;
+    }
+    
+    .showcase-container p {
+      font-size: 30px;
+    }
+  }
+
 
   /*     about us          */
 #about {
@@ -236,6 +316,33 @@ body {
     object-fit: cover;
     object-position: right;
   }
+
+  /* Media query for 768px breakpoint */
+@media screen and (max-width: 768px) {
+  #about .small {
+    padding-top: 50px; /* Reduce padding for smaller screens */
+    font-size: 3rem;
+  }
+}
+
+/* Media query for 578px breakpoint */
+@media screen and (max-width: 578px) {
+  #about .small {
+    padding-top: 20px; /* Further reduce padding for smaller screens */
+    font-size: 1.5rem;
+  }
+
+  #about h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  #about p {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+  .about-img{
+    display: ;
+  }
+}
 
   /* food category */
 
@@ -391,7 +498,29 @@ body {
     color: #fff;
     font-weight: 500;
   }
+  @media screen and (max-width: 768px) {
+    .food-menu-heading {
+      font-size: 4rem;
+    }
+    
+    .food-menu-container img {
+      width: 250px;
+      height: 300px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .food-menu-heading {
+      font-size: 3rem;
+    }
+    
+    .food-menu-container img {
+      width: 200px;
+      height: 250px;
+    }
+  }
 
+  /*blog section*/
   .blog-section {
     background-color: #000;
     display: flex;
@@ -441,6 +570,11 @@ body {
 
 .blog-content a:hover {
     background-color: #676004;
+}
+@media screen and (max-width: 768px) {
+  .blog-block {
+      max-width: 100%; /* Adjusted to take full width on smaller screens */
+  }
 }
 
 /*other info*/
@@ -696,7 +830,7 @@ section {
     color: #fff;
   }
   
-  @media (max-width: 991px) {
+  @media (min-width: 991px) {
     section {
       padding-top: 50px;
       padding-bottom: 50px;
